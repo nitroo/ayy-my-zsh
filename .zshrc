@@ -23,9 +23,6 @@ initialize_prompt() {
 
     setopt prompt_subst
     PROMPT='%n@%M %F{green}$(_collapsed_working_dir)%F{$_CLR_RESET}> '
-
-    # Set colors for ls
-    alias ls="ls --color=tty"
 }
 
 initialize_history() {
@@ -69,7 +66,17 @@ initialize_history() {
     setopt share_history          # share command history data
 }
 
+initialize_directories() {
+    # Set colors for ls
+    alias ls="ls --color=tty"
+    alias lsa='ls -lah'
+    alias l='ls -lah'
+    alias ll='ls -lh'
+    alias la='ls -lAh'
+}
+
 [[ -z $ZDOTDIR ]] && ZDOTDIR=$HOME
 
 initialize_prompt
 initialize_history
+initialize_directories
