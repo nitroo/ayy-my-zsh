@@ -75,8 +75,14 @@ initialize_directories() {
     alias la='ls -lAh'
 }
 
+initialize_plugins() {
+    source $ZDOTDIR/.ayy-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source $ZDOTDIR/.ayy-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+}
+
 [[ -z $ZDOTDIR ]] && ZDOTDIR=$HOME
 
 initialize_prompt
 initialize_history
 initialize_directories
+initialize_plugins
