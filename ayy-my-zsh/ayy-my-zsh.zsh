@@ -19,10 +19,8 @@ initialize_prompt() {
         echo "${(j:/:)pwd}"
     }
 
-    _CLR_RESET=white
-
     setopt prompt_subst
-    PROMPT='%n@%M %F{green}$(_collapsed_working_dir)%F{$_CLR_RESET}> '
+    PROMPT='%n@%M %F{green}$(_collapsed_working_dir)%F{white}> '
 }
 
 initialize_history() {
