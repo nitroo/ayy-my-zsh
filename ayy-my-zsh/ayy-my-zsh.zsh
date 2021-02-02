@@ -64,6 +64,14 @@ initialize_history() {
     setopt hist_ignore_space      # ignore commands that start with space
     setopt hist_verify            # show command with history expansion to user before running it
     setopt share_history          # share command history data
+
+    # Add history search based on current input.
+    # TODO: avoid hardcoding up and down arrows?
+    autoload -U history-search-end
+    zle -N history-beginning-search-backward-end history-search-end
+    zle -N history-beginning-search-forward-end history-search-end
+    bindkey "^[OA" history-beginning-search-backward-end
+    bindkey "^[OB" history-beginning-search-forward-end
 }
 
 initialize_directories() {
