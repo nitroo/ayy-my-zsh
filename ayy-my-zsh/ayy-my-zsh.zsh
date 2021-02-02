@@ -83,6 +83,9 @@ initialize_plugins() {
 [[ -z $ZDOTDIR ]] && ZDOTDIR=$HOME
 [[ -z $AMZ ]] && AMZ=${0%/*}
 
+# Set editing mode to emacs
+bindkey -e
+
 initialize_prompt
 initialize_history
 initialize_directories
