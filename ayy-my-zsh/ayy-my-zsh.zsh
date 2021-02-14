@@ -6,14 +6,16 @@ initialize_prompt() {
 
         # replace $HOME with ~, split working dir into array of dir segments.
         pwd=("${(s:/:)PWD/#$HOME/~}")
-        for i in {1..$(($#pwd-1))}; do
-            # use the first letter from all directories besides current.
-            if [[ "$pwd[$i]" = .* ]]; then
-                pwd[$i]="${${pwd[$i]}[1,2]}"
-            else
-                pwd[$i]="${${pwd[$i]}[1]}"
-            fi
-        done
+        if (($#pwd > 1)); then
+            for i in {1..$(($#pwd-1))}; do
+                # use the first letter from all directories besides current.
+                if [[ "$pwd[$i]" = .* ]]; then
+                    pwd[$i]="${${pwd[$i]}[1,2]}"
+                else
+                    pwd[$i]="${${pwd[$i]}[1]}"
+                fi
+            done
+        fi
 
         # join dir segments with a /
         echo "${(j:/:)pwd}"
