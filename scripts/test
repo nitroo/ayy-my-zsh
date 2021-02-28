@@ -1,5 +1,0 @@
-#!/bin/sh
-
-ZSH=$(which zsh)
-
-eval "ZDOTDIR=$(pwd) $ZSH"

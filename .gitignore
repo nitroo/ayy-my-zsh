@@ -1,2 +1,5 @@
 .zcompdump
 .zsh_history
+test/*
+!test/run
+!test/.zshrc

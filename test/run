@@ -1,0 +1,10 @@
+#!/bin/sh
+
+[ ! -d "ayy-my-zsh" ] && echo "fatal: expected ayy-my-zsh directory in current working dir." && exit
+
+[ -z "$ZSH" ] && ZSH=$(which zsh)
+[ -z "$ZDOTDIR"] && ZDOTDIR=$(dirname -- $0)
+
+echo "starting test shell with ayy-my-zsh (ZSH=$ZSH, ZDOTDIR=$ZDOTDIR)"
+
+eval "ZDOTDIR=$ZDOTDIR $ZSH"
