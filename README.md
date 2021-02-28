@@ -9,7 +9,12 @@ It's about time I move on from [Oh My ZSH!](https://ohmyz.sh/). It was always a 
 
 ## Installation
 
-Just put the folder somewhere and source the files!
+Download and run the installation script
+```console
+$ curl "https://raw.githubusercontent.com/nitroo/ayy-my-zsh/master/install.sh" | sh
+```
+
+or just download the folder somewhere and source the files!
 ```console
 $ source "$MY_FANCY_DIR/ayy-my-zsh/ayy-my-zsh.zsh"
 ```
